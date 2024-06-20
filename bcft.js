@@ -11,7 +11,6 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	const modApi = bcModSDK.registerMod({
 		name: 'BCFT',
 		fullName: 'BC-Forearm-Toolbox',
-		version: "x",
 		repository: 'https://github.com/BreadDain/BC-Forearm-Toolbox',
 	});
 	
