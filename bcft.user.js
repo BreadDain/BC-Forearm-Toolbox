@@ -2,7 +2,7 @@
 // @name         Siena's forearm toolbox
 // @namespace    https://www.bondageprojects.com/
 // @version      1.0
-// @description  You know what is this addon for.
+// @description  No Description
 // @author       Siena
 // @match https://bondageprojects.elementfx.com/*
 // @match https://www.bondageprojects.elementfx.com/*
