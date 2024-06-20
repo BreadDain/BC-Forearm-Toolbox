@@ -12,7 +12,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	fullName: 'Bondage Club Forearm Toolbox',
 	version: BCFT_Ver,
 	// Optional - Link to the source code of the mod
-	repository: 'https://github.com/DrBranestawm/BCAR',
+	repository: 'https://github.com/BreadDain/BC-Forearm-Toolbox',
 		});
 	
 	let Lock = "";
