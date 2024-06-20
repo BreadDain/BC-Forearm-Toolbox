@@ -7,10 +7,11 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 //SDKstuff end
 
 (async function() {
+	const BCFTver = "0.3";
 	const modApi = bcModSDK.registerMod({
 		name: 'BCFT',
 		fullName: 'BC-Forearm-Toolbox',
-		version: '1.0',
+		version: BCFTver,
 		repository: 'https://github.com/BreadDain/BC-Forearm-Toolbox',
 	});
 	
