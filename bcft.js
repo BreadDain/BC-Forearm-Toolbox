@@ -21,13 +21,16 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	modApi.hookFunction('LoginResponse', 0, (args, next) => {
 	  next(args);
 
-		  ServerBeep = {
-		    Timer: Date.now() + 10000,
-		    Message: `Toolbox: Login Response catched, attempt to patch`
-		  };
+		//  ServerBeep = {
+		//    Timer: Date.now() + 10000,
+		//    Message: `Toolbox: Login Response catched, attempt to patch`
+		//  };
 	  const response = args[0];
 	  if (response && typeof response.Name === 'string' && typeof response.AccountName === 'string') {
-	    console.log(`JEJEJEJEJJEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE`);
+		var itemfixarray = Asset.filter(x => x.InventoryID == undefined && x.Group.Category == "Item");
+		for (let i = 0; i < itemfixarray.length; i++){
+			InventoryAdd(Player, itemfixarray[i].Name, itemfixarray[i].Group.Name, false);
+		}  
 	    }
 	 });
 	
