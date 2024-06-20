@@ -18,14 +18,14 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	let Lock = "";
 	let Tlock = "";
 	
-	modApi.hookFunction('LoginResponse', 0, (args, next) => {
-	  next(args);
+	//modApi.hookFunction('LoginResponse', 0, (args, next) => {
+	//  next(args);
 	
-	  const response = args[0];
-	  if (response && typeof response.Name === 'string' && typeof response.AccountName === 'string') {
-	    console.log(`JEJEJEJEJJEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE`);
-	    }
-	  });
+	//  const response = args[0];
+	//  if (response && typeof response.Name === 'string' && typeof response.AccountName === 'string') {
+	//    console.log(`JEJEJEJEJJEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE`);
+	//    }
+	// });
 	
 	CommandCombine([
 	    {
