@@ -18,7 +18,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	let Lock = "";
 	let Tlock = "";
 	
-	modApi.hookFunction('LoginResponse', 0, (args, next) => {
+	modApi.hookFunction('CraftingLoadServer', 0, (args, next) => {
 	  next(args);
 
 		//  ServerBeep = {
