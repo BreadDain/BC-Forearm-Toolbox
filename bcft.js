@@ -355,9 +355,11 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	                  var victim;
 	                  for (let j = 0; j < person.BlackList.length; j++){
 	                    victim = ChatRoomCharacter.find((x) => x.MemberNumber === person.BlackList[j]);
-	                    if (victim.Nickname !== "") message += victim.Nickname + "/" + victim.Name;
-	                    else message += victim.Name;
-	                    message += "(" + victim.MemberNumber + "); ";
+			    if (victim){
+		                    if (victim.Nickname !== "") message += victim.Nickname + "/" + victim.Name;
+		                    else message += victim.Name;
+		                    message += "(" + victim.MemberNumber + "); ";
+			    }
 	                  }
 	                  message += "\n";
 	                }
