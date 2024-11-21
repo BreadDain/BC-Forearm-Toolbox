@@ -387,6 +387,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 				const data = ChatRoomGenerateChatRoomChatMessage("Whisper", string2);
 				data.Target = parseInt(string1);
 				ServerSend("ChatRoomChat", data);
+				ChatRoomSendLocal("ZentOS: Sent remotely to "+target+": "+string2, 0);
 			}else{
 				ChatRoomSendLocal("ZentOS: Target not found.", 10000);
 			}
