@@ -377,15 +377,17 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 			var string2 = args.split(/[ ,]+/)[1];
 			if (!string1 || !string2 || string1 === "" || string2 === "") {
 				ChatRoomSendLocal("ZentOS: Specify TargetID and Message. /tbwr ID MESSAGE", 10000);
+				return;
+			}else{
+				var target = ChatRoomCharacter.find((x) => x.MemberNumber === string1);
+				string2 = `(${string2.replace(/\)/g, "\\uf130\\u005d")}`;
 			}
-			var target = ChatRoomCharacter.find((x) => x.MemberNumber === string1);
-			string2 = `(${string2.replace(/\)/g, "\\uf130\\u005d")}`;
 			if (target){
 				const data = ChatRoomGenerateChatRoomChatMessage("Whisper", string2);
 				data.Target = parseInt(string1);
 				ServerSend("ChatRoomChat", data);
 			}else{
-				 ChatRoomSendLocal("ZentOS: Target not found.", 10000);
+				ChatRoomSendLocal("ZentOS: Target not found.", 10000);
 			}
 	        }
 	    }])
