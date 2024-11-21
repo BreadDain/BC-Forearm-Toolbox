@@ -375,11 +375,12 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	        Action: (args) => {
 			var string1 = parseInt(args.split(/[ ,]+/)[0]);
 			var string2 = args.split(/[ ,]+/)[1];
+			var target;
 			if (!string1 || !string2 || string1 === "" || string2 === "") {
 				ChatRoomSendLocal("ZentOS: Specify TargetID and Message. /tbwr ID MESSAGE", 10000);
 				return;
 			}else{
-				var target = ChatRoomCharacter.find((x) => x.MemberNumber === string1);
+				target = ChatRoomCharacter.find((x) => x.MemberNumber === string1);
 				string2 = `(${string2.replace(/\)/g, "\\uf130\\u005d")}`;
 			}
 			if (target){
