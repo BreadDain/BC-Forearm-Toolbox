@@ -394,14 +394,5 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	        }
 	    }])
 
-	modApi.hookFunction('ChatRoomListUpdate', 0, (args, next) => {
-	const action = args[0];
-	console.log("Init blacklist request");
-		if (action == Player.GhostList||action == Player.BlackList){
-			let promptedReason = prompt("Blacklist Reason?");
-			if (promptedReason != null){
 
-			}
-		}
-	})
 })();
