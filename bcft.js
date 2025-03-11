@@ -398,7 +398,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	const action = args[0];
 	console.log("Init blacklist request");
 		if (action == Player.GhostList||action == Player.BlackList){
-			let promptedReason = prompt(getText("Blacklist Reason?"));
+			let promptedReason = prompt("Blacklist Reason?");
 			if (promptedReason != null){
 				const data = ChatRoomGenerateChatRoomChatMessage("Whisper", "Blacklisted "+args[2]+", Reason: " );
 				data.Target = Player.MemberNumber;
