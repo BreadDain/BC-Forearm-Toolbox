@@ -400,9 +400,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		if (action == Player.GhostList||action == Player.BlackList){
 			let promptedReason = prompt("Blacklist Reason?");
 			if (promptedReason != null){
-				const data = ChatRoomGenerateChatRoomChatMessage("Whisper", "Blacklisted "+args[2]+", Reason: " );
-				data.Target = Player.MemberNumber;
-				ServerSend("ChatRoomChat", data);
+
 			}
 		}
 	})
