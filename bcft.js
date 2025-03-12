@@ -18,7 +18,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	let Lock = "";
 	let Tlock = "";
 	
-	modApi.hookFunction('LoginResponse', 0, (args, next) => {
+	modApi.hookFunction('LoginResponse', 4, (args, next) => {
 	  next(args);
 
 		//  ServerBeep = {
@@ -394,5 +394,14 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	        }
 	    }])
 
-
+	modApi.hookFunction('ChatRoomListUpdate', 4, (args, next) => {
+	next(args);
+	const action = args[0];
+	if (action == Player.GhostList||list == Player.BlackList){
+		let promptedReason = prompt(getText("Blacklist Reason?"));
+		if (promptedReason != null){
+			
+		}
+	}
+}
 })();
