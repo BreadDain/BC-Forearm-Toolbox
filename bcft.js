@@ -18,22 +18,23 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	let Lock = "";
 	let Tlock = "";
 	
-	modApi.hookFunction('LoginResponse', 4, (args, next) => {
-	  next(args);
-
-		//  ServerBeep = {
-		//    Timer: Date.now() + 10000,
-		//    Message: `Toolbox: Login Response catched, attempt to patch`
-		//  };
-	  const response = args[0];
-	  if (response && typeof response.Name === 'string' && typeof response.AccountName === 'string') {
-		var itemfixarray = Asset.filter(x => x.InventoryID == undefined && x.Group.Category == "Item");
-		for (let i = 0; i < itemfixarray.length; i++){
-			InventoryAdd(Player, itemfixarray[i].Name, itemfixarray[i].Group.Name, false);
-		}  
-	    }
-	 });
+	GibMeMyWaterCell();
+	RecordMyBlacklist();
 	
+	async function GibMeMyWaterCell(){
+		await waitFor(() => !!LoginResponse)
+		modApi.hookFunction('LoginResponse', 4, (args, next) => {
+			next(args);
+			const response = args[0];
+			if (response && typeof response.Name === 'string' && typeof response.AccountName === 'string') {
+				var itemfixarray = Asset.filter(x => x.InventoryID == undefined && x.Group.Category == "Item");
+				for (let i = 0; i < itemfixarray.length; i++){
+					InventoryAdd(Player, itemfixarray[i].Name, itemfixarray[i].Group.Name, false);
+				}  
+			}
+		});
+  	}
+
 	CommandCombine([
 	    {
 	        Tag: 'tbunlock',
@@ -409,20 +410,23 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		link.click();
 		URL.revokeObjectURL(link.href);
 	}
-
-	modApi.hookFunction('ChatRoomListUpdate', 4, (args, next) => {
-		const action = args[0];
-		const adding = args[1];
-		console.log("List update detected");
-		if (adding == true){
-			console.log("List addition detected");
-			if (action === Player.GhostList||list === Player.BlackList){
-				let promptedReason = prompt(getText("Blacklist Reason?"));
-				if (promptedReason != null){
-					recordBlame(args[2],promptedReason);
+	
+	async function RecordMyBlacklist(){
+		await waitFor(() => !!ChatRoomListUpdate)
+		modApi.hookFunction('ChatRoomListUpdate', 4, (args, next) => {
+			const action = args[0];
+			const adding = args[1];
+			console.log("List update detected");
+			if (adding == true){
+				console.log("List addition detected");
+				if (action === Player.GhostList||list === Player.BlackList){
+					let promptedReason = prompt(getText("Blacklist Reason?"));
+					if (promptedReason != null){
+						recordBlame(args[2],promptedReason);
+					}
 				}
 			}
-		}
-		next(args);
-	});
+			next(args);
+		});
+	}
 });
