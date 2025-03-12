@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Siena's forearm toolbox
 // @namespace    https://www.bondageprojects.com/
-// @version      0.3
+// @version      0.4
 // @description  No Description
 // @author       Lorfem
 // @match https://bondageprojects.elementfx.com/*
