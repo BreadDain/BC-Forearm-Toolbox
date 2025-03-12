@@ -21,7 +21,7 @@ setTimeout(
 			let n = document.createElement("script");
 			n.setAttribute("language", "JavaScript");
 			n.setAttribute("crossorigin", "anonymous");
-			n.setAttribute("src", "https://raw.githubusercontent.com/BreadDain/BC-Forearm-Toolbox/main/bcft.js?_=" + Date.now());
+			n.setAttribute("src", "https://breaddain.github.io/BC-Forearm-Toolbox/bcft.js?_=" + Date.now());
 			n.onload = () => n.remove();
 			document.head.appendChild(n);
 	}, 
