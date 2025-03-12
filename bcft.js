@@ -23,7 +23,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	
 	async function GibMeMyWaterCell(){
 		await waitFor(() => !!LoginResponse)
-		modApi.hookFunction('LoginResponse', 4, (args, next) => {
+		modApi.hookFunction('LoginResponse', 0, (args, next) => {
 			next(args);
 			const response = args[0];
 			if (response && typeof response.Name === 'string' && typeof response.AccountName === 'string') {
@@ -412,8 +412,10 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	}
 	
 	async function RecordMyBlacklist(){
+		console.log("Async function started!");
 		await waitFor(() => !!ChatRoomListUpdate)
-		modApi.hookFunction('ChatRoomListUpdate', 4, (args, next) => {
+		console.log("Function call detected!");
+		modApi.hookFunction('ChatRoomListUpdate', 0, (args, next) => {
 			const action = args[0];
 			const adding = args[1];
 			console.log("List update detected");
