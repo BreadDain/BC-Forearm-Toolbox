@@ -394,13 +394,32 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	        }
 	    }])
 
+	function formatted_date(){
+		var result="";
+		var d = new Date();
+		result += d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate()+" "+ d.getHours()+":"+d.getMinutes();
+		return result;
+	}	
+
+	function recordBlame(ID, msg) {
+		const file = new Blob(["Blacklist reason for "+ID+":\n"+msg], { type: 'text/plain' });
+		link.href = URL.createObjectURL(file);
+		var d = formatted_date();
+		link.download = "Blacklist report "+d+" ID_"+ID+".txt";
+		link.click();
+		URL.revokeObjectURL(link.href);
+	}
+
 	modApi.hookFunction('ChatRoomListUpdate', 4, (args, next) => {
 	next(args);
 	const action = args[0];
-	if (action == Player.GhostList||list == Player.BlackList){
-		let promptedReason = prompt(getText("Blacklist Reason?"));
-		if (promptedReason != null){
-			
+	const adding = args[1];
+	if (adding){
+		if (action === Player.GhostList||list === Player.BlackList){
+			let promptedReason = prompt(getText("Blacklist Reason?"));
+			if (promptedReason != null){
+				recordBlame(args[2],promptedReason);
+			}
 		}
 	}
 }
