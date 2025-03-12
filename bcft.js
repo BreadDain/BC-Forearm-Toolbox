@@ -433,6 +433,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	}	
 
 	function recordBlame(ID, msg) {
+		const link = document.createElement("a");
 		const file = new Blob(["Blacklist reason for "+ID+":\n"+msg], { type: 'text/plain' });
 		link.href = URL.createObjectURL(file);
 		var d = formatted_date();
