@@ -411,18 +411,18 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	}
 
 	modApi.hookFunction('ChatRoomListUpdate', 0, (args, next) => {
-	const action = args[0];
-	const adding = args[1];
-	console.log("List update detected");
-	if (adding == true){
-		console.log("List addition detected");
-		if (action === Player.GhostList||list === Player.BlackList){
-			let promptedReason = prompt(getText("Blacklist Reason?"));
-			if (promptedReason != null){
-				recordBlame(args[2],promptedReason);
+		const action = args[0];
+		const adding = args[1];
+		console.log("List update detected");
+		if (adding == true){
+			console.log("List addition detected");
+			if (action === Player.GhostList||list === Player.BlackList){
+				let promptedReason = prompt(getText("Blacklist Reason?"));
+				if (promptedReason != null){
+					recordBlame(args[2],promptedReason);
+				}
 			}
 		}
+		next(args);
 	}
-	next(args);
-}
-})();
+});
