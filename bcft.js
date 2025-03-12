@@ -17,7 +17,7 @@ var bcModSdk=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
 
 
-(async function () {
+(async function() {
 	const BCFT_Ver = '0.4';
 	const modApi = bcModSDK.registerMod({
 		name: 'BCFT',
@@ -442,4 +442,4 @@ var bcModSdk=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		URL.revokeObjectURL(link.href);
 	}
 	
-});
+})();
