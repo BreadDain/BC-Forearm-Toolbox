@@ -21,7 +21,7 @@ setTimeout(
         const n = document.createElement("script");
         n.type = "text/javascript";
         n.crossOrigin = "anonymous";
-        n.src = `https://breaddain.github.io/BC-Forearm-Toolbox/main/bcft.js?_=${Date.now()}`;
+        n.src = `https://breaddain.github.io/BC-Forearm-Toolbox/bcft.js?_=${Date.now()}`;
         document.head.appendChild(n);
     },
     2000,
