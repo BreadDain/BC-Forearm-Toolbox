@@ -17,13 +17,12 @@
 
 
 setTimeout(
-	function () {
-			let n = document.createElement("script");
-			n.setAttribute("language", "JavaScript");
-			n.setAttribute("crossorigin", "anonymous");
-			n.setAttribute("src", "https://breaddain.github.io/BC-Forearm-Toolbox/bcft.js?_=" + Date.now());
-			n.onload = () => n.remove();
-			document.head.appendChild(n);
-	}, 
-        10000
+    () => {
+        const n = document.createElement("script");
+        n.type = "text/javascript";
+        n.crossOrigin = "anonymous";
+        n.src = `https://breaddain.github.io/BC-Forearm-Toolbox/main/bcft.js?_=${Date.now()}`;
+        document.head.appendChild(n);
+    },
+    2000,
 );
