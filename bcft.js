@@ -18,7 +18,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 	let Lock = "";
 	let Tlock = "";
 	
-	modApi.hookFunction('LoginResponse', 4, (args, next) => {
+	modApi.hookFunction('LoginResponse', 0, (args, next) => {
 	  next(args);
 
 		//  ServerBeep = {
@@ -410,7 +410,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		URL.revokeObjectURL(link.href);
 	}
 
-	modApi.hookFunction('ChatRoomListUpdate', 4, (args, next) => {
+	modApi.hookFunction('ChatRoomListUpdate', 0, (args, next) => {
 	const action = args[0];
 	const adding = args[1];
 	console.log("List update detected");
