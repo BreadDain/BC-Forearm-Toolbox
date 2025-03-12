@@ -55,7 +55,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		console.log("List update detected");
 		if (adding == true){
 			console.log("List addition detected");
-			if (action === Player.GhostList||list === Player.BlackList){
+			if (action === Player.GhostList||action === Player.BlackList){
 				let promptedReason = prompt(getText("Blacklist Reason?"));
 				if (promptedReason != null){
 					recordBlame(args[2],promptedReason);
