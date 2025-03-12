@@ -15,9 +15,6 @@ var bcModSdk=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
 //import { waitFor } from "../util/utils";
 
-GibMeMyWaterCell();
-RecordMyBlacklist();
-
 async function GibMeMyWaterCell(){
 	//await waitFor(() => !!LoginResponse)
 	modApi.hookFunction('LoginResponse', 3, (args, next) => {
@@ -67,6 +64,9 @@ async function RecordMyBlacklist(){
 	
 	let Lock = "";
 	let Tlock = "";
+
+	GibMeMyWaterCell();
+	RecordMyBlacklist();
 	
 	CommandCombine([
 	    {
