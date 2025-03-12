@@ -15,7 +15,7 @@ var bcModSdk=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
 //import { waitFor } from "../util/utils";
 
-async function GibMeMyWaterCell(){
+//async function GibMeMyWaterCell(){
 	//await waitFor(() => !!LoginResponse)
 	modApi.hookFunction('LoginResponse', 3, (args, next) => {
 		const ret = next(args);
@@ -28,12 +28,10 @@ async function GibMeMyWaterCell(){
 		}
 		return ret;
 	});
-}
+//}
 
-async function RecordMyBlacklist(){
-	console.log("Async function started!");
+//async function RecordMyBlacklist(){
 	//await waitFor(() => !!ChatRoomListUpdate)
-	console.log("Function call detected!");
 	modApi.hookFunction('ChatRoomListUpdate', 3, (args, next) => {
 		const ret = next(args);
 		const action = args[0];
@@ -50,7 +48,7 @@ async function RecordMyBlacklist(){
 		}
 		return ret;
 	});
-}
+//}
 
 (async function () {
 	const BCFT_Ver = '0.4';
@@ -65,8 +63,8 @@ async function RecordMyBlacklist(){
 	let Lock = "";
 	let Tlock = "";
 
-	GibMeMyWaterCell();
-	RecordMyBlacklist();
+	//GibMeMyWaterCell();
+	//RecordMyBlacklist();
 	
 	CommandCombine([
 	    {
