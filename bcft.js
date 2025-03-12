@@ -15,6 +15,23 @@ var bcModSdk=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
 //import { waitFor } from "../util/utils";
 
+
+
+(async function () {
+	const BCFT_Ver = '0.4';
+	const modApi = bcModSDK.registerMod({
+		name: 'BCFT',
+		fullName: 'Bondage Club Forearm Toolbox',
+		version: BCFT_Ver,
+		// Optional - Link to the source code of the mod
+		repository: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+	});
+	
+	let Lock = "";
+	let Tlock = "";
+
+	//GibMeMyWaterCell();
+	//RecordMyBlacklist();
 //async function GibMeMyWaterCell(){
 	//await waitFor(() => !!LoginResponse)
 	modApi.hookFunction('LoginResponse', 3, (args, next) => {
@@ -49,23 +66,6 @@ var bcModSdk=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		return ret;
 	});
 //}
-
-(async function () {
-	const BCFT_Ver = '0.4';
-	const modApi = bcModSDK.registerMod({
-		name: 'BCFT',
-		fullName: 'Bondage Club Forearm Toolbox',
-		version: BCFT_Ver,
-		// Optional - Link to the source code of the mod
-		repository: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-	});
-	
-	let Lock = "";
-	let Tlock = "";
-
-	//GibMeMyWaterCell();
-	//RecordMyBlacklist();
-	
 	CommandCombine([
 	    {
 	        Tag: 'tbunlock',
